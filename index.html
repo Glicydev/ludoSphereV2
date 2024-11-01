@@ -4,9 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js" defer></script>
+    <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollToPlugin.min.js" defer></script>
     <link rel="stylesheet" href="css/base.css">
     <link rel="stylesheet" href="css/index.css">
     <script src="ts/script.ts" defer></script>
+    <script src="js/gsap.js" defer></script>
     <title>Site personnel</title>
 </head>
 
@@ -42,9 +45,15 @@
                 <p id="pOne">My name is Ludovic and i’m 16 years old, i study in CFPT-I in Geneva.</p>
                 <br>
                 <p>I am in my second year in my informatic school, this website is about my informatic known and
-                    passions.</p>
+                    passions. <br>
+                    <br>
+                    I did this alone, i hope you will like it !
+                </p>
             </article>
         </section>
+        <button id="discovert" onclick="scrollToUnder()">Discovert
+            me</button>
+        <div id="under">a</div>
     </main>
     <footer></footer>
 </body>

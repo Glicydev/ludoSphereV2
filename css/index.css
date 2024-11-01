@@ -1,3 +1,10 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+:root {
+    --discovert-width: 12rem;
+    --discovert-height: 3rem;
+}
+
 main {
     .card {
         position: absolute;
@@ -11,7 +18,7 @@ main {
         box-shadow: 0 0 9px 4px rgba(0, 0, 0, 0.267);
 
         img {
-            height: 85%;
+            width: 40%;
             margin-left: 5%;
         }
 
@@ -40,4 +47,31 @@ main {
             }
         }
     }
+
+    #discovert {
+        width: var(--discovert-width);
+        height: var(--discovert-height);
+        position: absolute;
+        left: calc(50vw - var(--discovert-width) / 2);
+        top: 80vh;
+        background-color: #FF6F61;
+        font-family: 'montserrat', sans-serif;
+        border-radius: 100rem;
+        color: white;
+        font-size: 1.4rem;
+        font-weight: 700;
+        border: 2px solid #A1473F;
+        cursor: pointer;
+        transition: all 0.3s ease;
+    }
+
+    #discovert:hover {
+        background-color: #d1594e;
+        transition: all 0.3s ease;
+    }
+}
+
+main > div {
+    margin-top: 100vh;
+    height: 100vh;
 }
