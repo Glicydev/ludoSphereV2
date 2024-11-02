@@ -6,6 +6,10 @@
     font-family: "Playfair", serif;
 }
 
+body {
+    overflow-x: hidden;
+}
+
 header {
     width: 98vw;
     margin-left: 1vw;
