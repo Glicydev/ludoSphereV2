@@ -18,6 +18,7 @@ main {
         display: flex;
         align-items: center;
         box-shadow: 0 0 9px 4px rgba(0, 0, 0, 0.267);
+        cursor: default;
 
         img {
             width: 40%;
@@ -73,7 +74,19 @@ main {
     }
 }
 
-main > div {
+main>#under {
     margin-top: 100vh;
     height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background: linear-gradient(0deg, rgba(255,234,204,1) 95%, rgba(255,255,255,1) 96%);
+    padding-top: 10vh;
+
+    h2 {
+        font-size: 4rem;
+        font-weight: 600;
+        width: 100%;
+        text-align: center;
+        color: #333;
+    }
 }
