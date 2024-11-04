@@ -17,6 +17,7 @@ function scrollToUnder() {
     })
 }
 
+// Animation de base de la carte
 gsap.fromTo(card, {
     y: 30,
     opacity: 0.5
@@ -26,6 +27,7 @@ gsap.fromTo(card, {
     opacity: 1
 })
 
+// Animation pour les languages
 languages.forEach(language => {
     gsap.fromTo(language, {
         opacity: 0,
