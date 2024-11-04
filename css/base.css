@@ -1,15 +1,21 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@0,300;0,400;0,700;0,900;1,300;1,400;1,700;1,900&family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap');
 
 * {
     margin: 0;
     padding: 0;
-    font-family: "Playfair", serif;
+    font-family: "Merriweather", serif;
 }
 
 body {
     overflow-x: hidden;
-    height: 1000vh;
+}
 
+h1,
+h2,
+h3,
+h4 {
+    font-family: "Playfair", serif;
 }
 
 header {
@@ -100,6 +106,7 @@ header {
             width: 10rem;
             height: 3rem;
             transition: all 0.3s ease-in;
+            font-family: "Playfair", serif;
         }
 
         button:hover {

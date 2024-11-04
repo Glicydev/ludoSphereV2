@@ -40,7 +40,8 @@
     </header>
     <main>
         <section class="card">
-            <img src="https://i.pinimg.com/736x/16/f8/a8/16f8a8056d46ea4ff442c7bbe87d2461.jpg" alt="Moi" draggable="false">
+            <img src="https://i.pinimg.com/736x/16/f8/a8/16f8a8056d46ea4ff442c7bbe87d2461.jpg" alt="Moi"
+                draggable="false">
             <article class="desc">
                 <h2>Who am I ?</h2>
                 <p id="pOne">My name is Ludovic and i’m 16 years old, i study in CFPT-I in Geneva.</p>
@@ -57,20 +58,86 @@
         <div id="under">
             <h2>Languages I know</h2>
             <section class="languages">
-                <article class="language">
-                    <img src="img/languages/html.png" alt="HTML"  draggable="false">
-                    <div class="text">
-                        <p>HTML is an language that permit to mark a website, it’s a basic web language and I know it
-                            inside
-                            oud.</p>
-                    </div>
-                </article>
-                <article class="language secondLanguage">
+                    <article class="language firstLanguage">
+                        <img src="img/languages/html.png" alt="HTML" draggable="false" class="imageLeft">
+                        <div class="text">
+                            <p>HTML is an language that permit to mark a website, it’s a basic web language and I know
+                                it
+                                inside
+                                oud.</p>
+                        </div>
+                        <button onclick="goToSecond()">Next</button>
+                    </article>
+                <article class="language languageRight secondLanguage">
                     <div class="text">
                         <p>CSS is the essential companion to HTML, adding style and elegance to its structure. I have a
                             strong understanding of this language.</p>
                     </div>
-                    <img src="img/languages/css.png" alt="CSS"  draggable="false">
+                    <img src="img/languages/css.png" alt="CSS" draggable="false" class="imageRight">
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language">
+                    <img src="img/languages/php.png" alt="PHP" draggable="false" class="imageLeft">
+                    <div class="text">
+                        <p>PHP is an server side language, with it we can do much things like connect to databases and security.</p>
+                    </div>
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language languageRight">
+                    <div class="text">
+                        <p>C# is an object-oriented compilated language that permit to do very varied things.</p>
+                    </div>
+                    <img src="img/languages/csharp.png" alt="csharp" draggable="false" class="imageRight">
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language">
+                    <img src="img/languages/javascript.png" alt="JS" draggable="false" class="imageLeft">
+                    <div class="text">
+                        <p>Javascript is an web language, with that you can make frontend of websites and make them reactive</p>
+                    </div>
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language languageRight">
+                    <div class="text">
+                        <p>Typescript is an better version of JS, the advantage is that we can specify types and better object-oriented</p>
+                    </div>
+                    <img src="img/languages/typescript.png" alt="typescript" draggable="false" class="imageRight">
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language">
+                    <img src="img/languages/react.png" alt="REACT" draggable="false" class="imageLeft">
+                    <div class="text">
+                        <p>React is an JS / TS framework to make websites more powerful</p>
+                    </div>
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language languageRight">
+                    <div class="text">
+                        <p>Vue is similar to react but is easier to learn and has more separated languages, it's also have more features inclued.</p>
+                    </div>
+                    <img src="img/languages/Vue.png" alt="CSS" draggable="false" class="imageRight">
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language">
+                    <img src="img/languages/nodejs.png" alt="HTML" draggable="false" class="imageLeft">
+                    <div class="text">
+                        <p>Node js is a whole word added with a js base, it can make very varied things frontend and backend</p>
+                    </div>
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language languageRight">
+                    <div class="text">
+                        <p>With mySQL, you can ask, insert, delete datas and much more with databases</p>
+                    </div>
+                    <img src="img/languages/mysql.png" alt="mysql" draggable="false" class="imageRight">
+                    <button onclick="goNext()">Next</button>
+                </article>
+                <article class="language">
+                    <img src="img/languages/mariadb.png" alt="mariadb" draggable="false" class="imageLeft">
+                    <div class="text">
+                        <p>MariaDB is very similar to MySQL but it has some differences in syntax</p>
+                    </div>
+                    <button onclick="goNext()">Next</button>
                 </article>
             </section>
         </div>

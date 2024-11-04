@@ -12,7 +12,7 @@ gsap.registerPlugin(ScrollTrigger)
 function scrollToUnder() {
     gsap.to(window, {
         duration: 1.25,
-        scrollTo: { y: under.offsetTop + 100 },
+        scrollTo: { y: under.offsetTop + 125 },
         ease: "power2"
     })
 }
@@ -29,7 +29,7 @@ gsap.fromTo(card, {
 
 // Animation pour les languages
 languages.forEach(language => {
-    gsap.fromTo(language, {
+    gsap.fromTo( language.querySelectorAll("*"), {
         opacity: 0,
         y: 100
     }, {
@@ -39,8 +39,24 @@ languages.forEach(language => {
         scrollTrigger: {
             trigger: language,
             markers: true,
-            start: "top 70%",
+            start: "top 40%",
             toggleActions: "play none none reverse"
         }
     });
 });
+
+function goToSecond() {
+    const second = document.querySelector(".secondLanguage")
+    gsap.to(window, {
+        duration: 1.25,
+        scrollTo: { y: second.offsetTop }
+    })
+}
+
+function goNext() {
+    const targetPosition = window.scrollY + window.innerHeight
+    gsap.to(window, {
+        duration: 1.25,
+        scrollTo: { y: targetPosition }
+    })
+}
