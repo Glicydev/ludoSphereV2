@@ -18,9 +18,8 @@ function scrollToUnder() {
 }
 
 gsap.from(card, {
-    duration: 2,
-    y: 20,
-    ease: "elastic.out(1, 0.3)"
+    duration: 0.5,
+    y: 30
 })
 
 languages.forEach(language => {
