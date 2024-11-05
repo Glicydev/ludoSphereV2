@@ -63,7 +63,6 @@ function goNext(e) {
         scrollTo: { y: targetPosition },
         autoKill: true
     })
-    console.log(targetPosition)
 }
 
 nextButtons.forEach(nextButton => {
