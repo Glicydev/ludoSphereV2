@@ -2,6 +2,7 @@
 const under = document.getElementById("under");
 const card = document.querySelector(".card");
 const languages = document.querySelectorAll(".languages article");
+const nextButtons = document.querySelectorAll(".languageNext button");
 
 // PLuggins registering
 gsap.registerPlugin(ScrollToPlugin)
@@ -53,10 +54,18 @@ function goToSecond() {
     })
 }
 
-function goNext() {
-    const targetPosition = window.scrollY + window.innerHeight
+function goNext(e) {
+    const parent = e.target.parentElement
+    const rect = parent.getBoundingClientRect()
+    const targetPosition = rect.top + window.scrollY + window.innerHeight
     gsap.to(window, {
         duration: 1.25,
-        scrollTo: { y: targetPosition }
+        scrollTo: { y: targetPosition },
+        autoKill: true
     })
+    console.log(targetPosition)
 }
+
+nextButtons.forEach(nextButton => {
+    nextButton.addEventListener("click", goNext)
+})
