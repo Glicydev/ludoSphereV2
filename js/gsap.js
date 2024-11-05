@@ -43,8 +43,8 @@ languages.forEach(language => {
             start: "top 40%",
             toggleActions: "play none none reverse"
         }
-    });
-});
+    })
+})
 
 function goToSecond() {
     const second = document.querySelector(".secondLanguage")
