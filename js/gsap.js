@@ -3,6 +3,7 @@ const under = document.getElementById("under");
 const card = document.querySelector(".card");
 const languages = document.querySelectorAll(".languages article");
 const nextButtons = document.querySelectorAll(".languageNext button");
+const aside = document.querySelector("aside");
 
 // PLuggins registering
 gsap.registerPlugin(ScrollToPlugin)
@@ -67,4 +68,8 @@ function goNext(e) {
 
 nextButtons.forEach(nextButton => {
     nextButton.addEventListener("click", goNext)
+})
+
+gsap.to(aside.querySelector(".bg"), {
+    top: 0
 })
