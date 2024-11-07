@@ -196,6 +196,8 @@ main {
 }
 
 aside {
+    padding: 1rem 0;
+    border: 1px solid rgb(185, 185, 185);
     position: fixed;
     height: 25vh;
     width: 10vw;
@@ -222,6 +224,7 @@ aside {
             cursor: pointer;
             z-index: 1;
             background-color: #fff;
+            font-size: 1rem;
         }
 
         .line {

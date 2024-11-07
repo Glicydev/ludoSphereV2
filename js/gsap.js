@@ -4,6 +4,7 @@ const card = document.querySelector(".card");
 const languages = document.querySelectorAll(".languages article");
 const nextButtons = document.querySelectorAll(".languageNext button");
 const aside = document.querySelector("aside");
+const texts = document.querySelectorAll("aside .container .text")
 
 // PLuggins registering
 gsap.registerPlugin(ScrollToPlugin)
@@ -74,63 +75,79 @@ gsap.to(aside.querySelector(".bg"), {
 })
 
 function animateAside() {
+
+    // Recuperation des elements html
     const container = aside.querySelector(".container")
     const line = document.querySelector(".line")
-    const texts = document.querySelectorAll("aside .container .text")
     const languagesDiv = document.querySelector(".languages")
     const footer = document.querySelector("footer")
     const dessus = document.querySelector(".dessus")
     const techs = document.querySelector(".techs")
 
+    // Placer le footer
     footer.style.top = techs.offsetTop + techs.style.height + "px"
 
+    // Recuperer les rects des etapes
     const containerRect = container.getBoundingClientRect();
     const baseRect = texts[0].getBoundingClientRect();
     const firstStepRect = texts[1].getBoundingClientRect();
     const secondStepRect = texts[2].getBoundingClientRect();
     const lastStepRect = texts[3].getBoundingClientRect();
     
+    // Calculer les etapes pour la ligne
     const baseStep = baseRect.top - containerRect.top
     const firstStep = firstStepRect.top - containerRect.top
     const secondStep = secondStepRect.top - containerRect.top
     const lastStep = lastStepRect.top - containerRect.top
-    gsap.set(line, { height: baseStep });
 
+    // Initialisation de la forme
+    gsap.set(line, { height: baseStep });
+    gsap.to(texts[0], { color: "#333", fontSize: "1.1rem", duration: 0.2 });
+
+    // Animation
     let tl = gsap.timeline();
 
-    // Première animation
     tl.to(line, {
         scrollTrigger: {
             trigger: dessus,
             start: "bottom 99%",
-            end: "bottom 10%",
+            end: "bottom 20%",
             toggleActions: "play none reverse none",
-            scrub: 2, 
-            markers: false
+            scrub: 1, 
+            markers: false,
+            onEnter: () => {
+                gsap.to(texts[0], { color: "#333", fontSize: "1.1rem", duration: 0.2 });
+            }
         },
         height: firstStep,
         onComplete: function() {
-            // Une fois la première animation terminée, on déclenche la deuxième
             tl.to(line, {
                 scrollTrigger: {
                     trigger: languagesDiv,
-                    start: "top 90%", // La deuxième animation commence ici
+                    start: "top 90%",
                     end: "bottom 10%",
                     toggleActions: "play none reverse none",
-                    scrub: 2,
-                    markers: true
+                    scrub: 1,
+                    markers: true,
+                    onEnter: () => {
+                        gsap.to(texts[1], { color: "#333", fontSize: "1.1rem", duration: 0.2 });
+                        gsap.to(texts[0], { color: "#9c9c9c", fontSize: "1rem", duration: 0.2 });
+                    }
                 },
                 height: secondStep,
                 onComplete: function() {
-                    // La troisième animation commence après la deuxième
                     tl.to(line, {
                         scrollTrigger: {
                             trigger: footer,
-                            start: "top 90%", // La troisième animation commence ici
+                            start: "top 90%",
                             end: "bottom bottom",
                             toggleActions: "play none reverse none",
-                            scrub: 2,
-                            markers: false
+                            scrub: 1,
+                            markers: false,
+                            onEnter: () => {
+                                gsap.to(texts[2], { color: "#333", fontSize: "1.1rem", duration: 0.2 });
+                                gsap.to(texts[1], { color: "#9c9c9c", fontSize: "1rem", duration: 0.2 });
+                            }
                         },
                         height: lastStep
                     });
@@ -138,9 +155,29 @@ function animateAside() {
             });
         }
     });
-    
 }
 
 animateAside()
 
 window.addEventListener("resize", animateAside)
+
+/**
+ * Permet de plus facilement scroller jusqu'a un element HTML
+ * 
+ * @param {string} elementClass Nom de la classe de l'element HTML
+ */
+function goTo(elementClass) {
+    const element = document.querySelector(`.${elementClass}`)
+    window.scrollTo({
+        top: element.offsetTop,
+        behavior: "smooth"
+    })
+}
+
+// Si on est tout en haut, alors faire que ce soit uniquement le premier texte du aside qui soit visible
+window.addEventListener("scroll", () => {
+    if (window.scrollY === 0) {
+        gsap.to(texts[0], { color: "#333", fontSize: "1.1rem", duration: 0.2 });
+        gsap.to(texts[1], { color: "#9c9c9c", fontSize: "1rem", duration: 0.2 });
+    }
+})
