@@ -196,7 +196,7 @@ main {
 }
 
 aside {
-    padding: 1rem 0;
+    padding: 10px 0;
     border: 1px solid rgb(185, 185, 185);
     position: fixed;
     height: 25vh;
