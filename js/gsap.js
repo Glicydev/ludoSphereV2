@@ -5,6 +5,7 @@ const languages = document.querySelectorAll(".languages article");
 const nextButtons = document.querySelectorAll(".languageNext button");
 const aside = document.querySelector("aside");
 const texts = document.querySelectorAll("aside .container .text")
+const textInAsideColor = "#8b8b8b"
 
 // PLuggins registering
 gsap.registerPlugin(ScrollToPlugin)
@@ -84,6 +85,7 @@ function animateAside() {
     const dessus = document.querySelector(".dessus")
     const techs = document.querySelector(".techs")
 
+
     // Placer le footer
     footer.style.top = techs.offsetTop + techs.style.height + "px"
 
@@ -131,7 +133,7 @@ function animateAside() {
                     markers: true,
                     onEnter: () => {
                         gsap.to(texts[1], { color: "#333", fontSize: "1.1rem", duration: 0.2 });
-                        gsap.to(texts[0], { color: "#9c9c9c", fontSize: "1rem", duration: 0.2 });
+                        gsap.to(texts[0], { color: textInAsideColor, fontSize: "1rem", duration: 0.2 });
                     }
                 },
                 height: secondStep,
@@ -146,7 +148,7 @@ function animateAside() {
                             markers: false,
                             onEnter: () => {
                                 gsap.to(texts[2], { color: "#333", fontSize: "1.1rem", duration: 0.2 });
-                                gsap.to(texts[1], { color: "#9c9c9c", fontSize: "1rem", duration: 0.2 });
+                                gsap.to(texts[1], { color: textInAsideColor, fontSize: "1rem", duration: 0.2 });
                             }
                         },
                         height: lastStep
@@ -178,6 +180,6 @@ function goTo(elementClass) {
 window.addEventListener("scroll", () => {
     if (window.scrollY === 0) {
         gsap.to(texts[0], { color: "#333", fontSize: "1.1rem", duration: 0.2 });
-        gsap.to(texts[1], { color: "#9c9c9c", fontSize: "1rem", duration: 0.2 });
+        gsap.to(texts[1], { color: textInAsideColor, fontSize: "1rem", duration: 0.2 });
     }
 })
