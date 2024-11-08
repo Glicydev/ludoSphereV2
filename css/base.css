@@ -50,47 +50,61 @@ header {
         justify-content: center;
         top: 2.5vh;
         margin-left: -1vw;
-
+    
         ul {
             display: inline-flex;
             gap: 2rem;
             list-style-type: none;
-
+            align-items: center;
+    
             li {
                 position: relative;
+                margin-right: 1rem;
+                
+                &::after {
+                    content: "";
+                    display: block;
+                    position: absolute;
+                    width: 1.5rem;
+                    height: 2px;
+                    background-color: #3e27237c;
+                    right: -2.3rem;
+                    top: 50%;
+                    transform: translateY(-50%);
+                }
+    
+                &:last-child::after {
+                    content: none;
+                }
             }
-
-            li>a {
+    
+            li > a {
                 color: #3E2723;
                 text-decoration: none;
                 font-size: 1.2rem;
                 font-family: 'Montserrat', sans-serif;
                 font-weight: 400;
             }
-
-            li>a::before {
+    
+            li > a::before {
                 content: "";
                 position: absolute;
-                width: 0%;
+                width: 0;
                 height: 2px;
                 background-color: #3e2723c2;
                 bottom: -10%;
                 left: 50%;
                 transition: all 0.3s;
             }
-
-            li>a:hover::before {
+    
+            li > a:hover::before {
                 width: 100%;
                 left: 0;
                 transition: all 0.3s;
             }
-
-            hr {
-                border-color: #3e27237c;
-                rotate: 90deg;
-            }
         }
     }
+    
 
     .buttonContainer {
         position: absolute;
