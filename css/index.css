@@ -259,14 +259,52 @@ footer {
         width: 50vw;
 
         p {
-            font-size: 1.25rem;
+            font-size: 1rem !important;
         }
+    }
+
+    aside {
+        width: 15vw;
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .card>p {
+        font-size: 0.9rem !important;
+    }
+
+    h1 {
+        left: 2rem !important;
     }
 }
 
 @media only screen and (max-width: 1000px) {
     .card {
         width: 70vw;
+    }
+
+    aside {
+        width: 20vw;
+        top: auto;
+        bottom: 2rem;
+        left: auto;
+        right: 2rem;
+        height: 20vh;
+    }
+
+    .languages article div p {
+        font-size: 1.2rem !important;
+    }
+
+    h1 {
+        left: 50% !important;
+        transform: translate(-50%, 0);
+    }
+
+    nav {
+        position: fixed !important;
+        width: 100vw;
+        height: 100vh;
     }
 }
 
@@ -293,6 +331,28 @@ footer {
 
         p {
             font-size: 1.1rem;
+        }
+    }
+
+    .languages article div p {
+        font-size: 1rem !important;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .languages article {
+        flex-direction: column;
+
+        div {
+            width: 60vw !important;
+            padding: 2rem 0;
+            margin: 2rem 0;
+            height: auto;
+
+            p {
+                width: 80%;
+                padding: 0 !important;
+            }
         }
     }
 }
